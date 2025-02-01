@@ -5,14 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Internship</title>
-  <meta name="description"
-    content="">
-  <link rel="preload" href="./fonts/manrope/Manrope-Regular.woff2" type="font/woff2" as="font"
-    crossorigin="anonymous">
-  <link rel="preload" href="./fonts/manrope/Manrope-Light.woff2" type="font/woff2" as="font"
-    crossorigin="anonymous">
-  <link rel="preload" href="./fonts/manrope/Manrope-Medium.woff2" type="font/woff2" as="font"
-    crossorigin="anonymous">
+  <meta name="description" content="">
+  <link rel="preload" href="./fonts/manrope/Manrope-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/manrope/Manrope-Light.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/manrope/Manrope-Medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="./favicons/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="./favicons/favicon.svg">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -23,8 +19,65 @@
 </head>
 
 <body class="page-body">
+  <main class="page-body__main">
 
-  <!-- примеры требуемых атрибутов data-test="*" -->
+    <section class="contacts section" data-test="contacts">
+      <div class="contacts__container container">
+        <div class="contacts__top">
+          <h2 class="contacts__title section-title">Контакты</h2>
+          <address class="contacts__address">
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <span class="contacts__item-title">Центральный офис</span>
+                <p class="contacts__item-text">
+                  г. Новосибирск, ул. Щетинкина 68,
+                  <br>
+                  культурный центр
+                </p>
+              </li>
+              <li class="contacts__item">
+                <span class="contacts__item-title">Телефон</span>
+                <a class="contacts__item-link" href="tel:+796387687676">+7 963 876 876 76</a>
+              </li>
+              <li class="contacts__item">
+                <span class="contacts__item-title">Email</span>
+                <a class="contacts__item-link" href="mailto:Info@stazh.ru">Info@stazh.ru</a>
+              </li>
+            </ul>
+          </address>
+        </div>
+
+        <div class="contacts__map-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="./img/contacts/map-desktop@1x.webp 1x, ./img/contacts/map-desktop@2x.webp 2x" width="1240" height="486" type="image/webp">
+            <source media="(min-width: 768px)" srcset="./img/contacts/map-tablet@1x.webp 1x, ./img/contacts/map-tablet@2x.webp 2x" width="678" height="500" type="image/webp">
+            <source media="(min-width: 320px)" srcset="./img/contacts/map-mobile@1x.webp 1x, ./img/contacts/map-mobile@2x.webp 2x" width="290" height="240" type="image/webp">
+
+            <source media="(min-width: 1440px)" srcset="./img/contacts/map-desktop@1x.jpg 1x, ./img/contacts/map-desktop@2x.jpg 2x" width="1240" height="486" type="image/png">
+            <source media="(min-width: 768px)" srcset="./img/contacts/map-tablet@1x.jpg 1x, ./img/contacts/map-tablet@2x.jpg 2x" width="678" height="500" type="image/png">
+            <img class="contacts__map" src="./img/contacts/map-mobile@1x.jpg" srcset="./img/contacts/map-mobile@2x.jpg 2x" width="290" height="240" alt="Изображение местоположения нашего офиса на карте.">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
+
+
+<!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
+<svg>
+  <use href="/__spritemap#sprite-user"></use>
+</svg>
+
   <div data-test="hero">hero</div>
   <div data-test="about">about</div>
   <div data-test="programs">programs</div>
@@ -32,17 +85,5 @@
   <div data-test="news">news</div>
   <div data-test="FAQ">FAQ</div>
   <div data-test="reviews">reviews</div>
-  <div data-test="contacts">contacts</div>
   <div data-test="form">form</div>
-  <div data-test="footer">footer</div>
-  <script type="module" src="js/main.js"></script>
-</body>
-
-</html>
-
-
-<!-- пример использования спрайта -->
-<img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
-<svg>
-  <use href="/__spritemap#sprite-user"></use>
-</svg>
+  <div data-test="footer">footer</div> -->
