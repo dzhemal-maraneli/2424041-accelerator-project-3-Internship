@@ -1,0 +1,105 @@
+.button {
+  @include button-reset;
+
+  position: relative;
+  padding: 15px 58px 15px 20px;
+  border: 1px solid $accent-color;
+  border-radius: 30px;
+  max-width: 223px;
+
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $accent-color;
+  text-align: left;
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 14px;
+    max-width: 279px;
+    padding: 20px 70px 20px 30px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: translateY(-50%);
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+
+    background-color: $white-color;
+    mask-image: url("/__spritemap#sprite-arrow-icon-view");
+    mask-repeat: no-repeat;
+    z-index: 1;
+
+    @media (min-width: $tablet-width) {
+      right: 22px;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    content: "";
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s;
+
+    background-color: $accent-color;
+
+    @media (min-width: $tablet-width) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &:hover {
+    background-color: $accent-color;
+    color: $white-color;
+
+    &::before {
+      transform: translateY(-50%) rotate(45deg);
+      background-color: $accent-color;
+    }
+
+    &::after {
+      background-color: $white-color;
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    &::before {
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &:active {
+    color: $white-color-07;
+
+    &::before {
+      opacity: 0.7;
+    }
+  }
+
+  &:disabled {
+    color: $disabled-color;
+    cursor: default;
+    pointer-events: none;
+    border-color: $disabled-color;
+
+    &::after {
+      background-color: $disabled-color;
+    }
+  }
+}
