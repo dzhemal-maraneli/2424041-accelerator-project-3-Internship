@@ -63,6 +63,19 @@
     }
   }
 
+  &:focus-within {
+    background-color: $white-color;
+
+    .faq__accordion-button {
+      background-color: $white-color;
+      border-color: $accent-color;
+    }
+
+    .faq__accordion-button::before {
+      background-color: $accent-color;
+    }
+  }
+
   &:active {
     .faq__accordion-item-title {
       color: $active-color;
@@ -119,6 +132,19 @@
   gap: 20px;
 
   &:hover {
+    background-color: $accent-color;
+
+    .faq__accordion-button {
+      background-color: transparent;
+      border-color: $white-color;
+    }
+
+    .faq__accordion-button::before {
+      background-color: $white-color;
+    }
+  }
+
+  &:focus-within {
     background-color: $accent-color;
 
     .faq__accordion-button {
