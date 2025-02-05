@@ -1,5 +1,6 @@
 .button {
   @include button-reset;
+  @include link-reset;
 
   position: relative;
   padding: 15px 58px 15px 20px;

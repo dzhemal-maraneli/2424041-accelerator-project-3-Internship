@@ -36,5 +36,7 @@ function setHeight(item) {
   }
 }
 
-accordionItemHandler();
+window.addEventListener('load', () => {
+  accordionItemHandler();
+});
 
