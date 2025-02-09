@@ -1,5 +1,4 @@
 .programs {
-  // overflow: hidden;
 }
 
 .programs__container {
@@ -74,10 +73,7 @@
 }
 
 .programs__scrollbar {
-  height: 2px;
-  background-color: $accent-color-02;
   display: none;
-  margin: 10px 0;
 
   @media (min-width: $tablet-width) {
     display: block;

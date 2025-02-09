@@ -8,12 +8,12 @@ const programsSwiper = new Swiper('.programs__slider', {
   slidesPerView: 1,
   spaceBetween: 15,
   navigation: {
-    nextEl: '.programs-navigation__button--next',
-    prevEl: '.programs-navigation__button--prev',
+    nextEl: '.programs__navigation-button--next',
+    prevEl: '.programs__navigation-button--prev',
   },
   scrollbar: {
     el: '.programs__scrollbar',
-    dragClass: 'programs__scrollbar-drag',
+    dragClass: 'scrollbar__drag',
     draggable: true,
   },
   breakpoints: {
@@ -27,3 +27,5 @@ const programsSwiper = new Swiper('.programs__slider', {
     },
   }
 });
+
+programsSwiper.slideReset();

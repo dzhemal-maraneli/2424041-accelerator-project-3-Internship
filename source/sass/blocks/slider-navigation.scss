@@ -24,6 +24,9 @@
   justify-content: center;
   align-items: center;
 
+  border-radius: 50%;
+  transition: background-color 0.3s;
+
   &::before {
     content: "";
     width: 10px;
@@ -40,5 +43,33 @@
 
   &--prev {
     transform: rotate(180deg);
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0.7;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    background-color: $white-color;
+  }
+
+  &:active {
+    background-color: $white-color;
+
+    &::before {
+      opacity: 0.7;
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+
+    &::before {
+      background-color: $disabled-color;
+    }
   }
 }
