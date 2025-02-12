@@ -1,15 +1,42 @@
-.button {
+.header {
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  @media (min-width: $tablet-width) {
+    padding: 30px 0;
+  }
+
+  @media (min-width: $desktop-width) {}
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  &--hide {
+    display: none;
+  }
+}
+
+.header__burger-button {
   @include button-reset;
-  @include link-reset;
 
   position: relative;
-  padding: 15px 58px 15px 20px;
+  padding: 19px 70px 19px 20px;
   border: 1px solid $accent-color;
   border-radius: 30px;
   max-width: 223px;
+  background-color: $white-color;
 
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 14px;
+  line-height: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -24,24 +51,27 @@
     padding: 20px 70px 20px 30px;
   }
 
+  @media (min-width: $desktop-width) {
+    padding: 20px 70px 20px 20px;
+  }
+
   &::before {
     position: absolute;
     top: 50%;
     right: 16px;
     content: "";
-    width: 10px;
-    height: 10px;
+    width: 23px;
+    height: 16px;
     transform: translateY(-50%);
     transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
 
     background-color: $white-color;
-    mask-image: url("/__spritemap#sprite-arrow-icon-view");
+    mask-image: url("/__spritemap#sprite-burger-icon-view");
     mask-repeat: no-repeat;
+    mask-position: center;
     z-index: 1;
 
-    @media (min-width: $tablet-width) {
-      right: 22px;
-    }
+    @media (min-width: $tablet-width) {}
   }
 
   &::after {
@@ -49,18 +79,15 @@
     top: 50%;
     right: 4px;
     content: "";
-    width: 34px;
-    height: 34px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     transform: translateY(-50%);
     transition: background-color 0.3s;
 
     background-color: $accent-color;
 
-    @media (min-width: $tablet-width) {
-      width: 46px;
-      height: 46px;
-    }
+    @media (min-width: $tablet-width) {}
   }
 
   &:hover {
@@ -68,7 +95,6 @@
     color: $white-color;
 
     &::before {
-      transform: translateY(-50%) rotate(45deg);
       background-color: $accent-color;
     }
 
@@ -80,9 +106,7 @@
   &:focus {
     outline: none;
 
-    &::before {
-      transform: translateY(-50%) rotate(45deg);
-    }
+    &::before {}
   }
 
   &:active {
@@ -111,75 +135,30 @@
   }
 }
 
+.header__burger-button--active {
+  max-width: 290px;
+  width: 100%;
 
-.button--white {
-  border: 1px solid $white-color;
+  background-color: $accent-color;
   color: $white-color;
 
   &::before {
-    position: absolute;
-    top: 50%;
-    right: 16px;
-    content: "";
-    width: 10px;
-    height: 10px;
-    transform: translateY(-50%);
-    transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
-
     background-color: $accent-color;
-    mask-image: url("/__spritemap#sprite-arrow-icon-view");
-    mask-repeat: no-repeat;
-    z-index: 1;
-
-    @media (min-width: $tablet-width) {
-      right: 22px;
-    }
+    mask-image: url("/__spritemap#sprite-burger-close-icon-view");
+    transform: translateY(-50%) rotate(180deg);
   }
 
   &::after {
-    position: absolute;
-    top: 50%;
-    right: 4px;
-    content: "";
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    transform: translateY(-50%);
-    transition: background-color 0.3s;
-
     background-color: $white-color;
-
-    @media (min-width: $tablet-width) {
-      width: 46px;
-      height: 46px;
-    }
-  }
-
-  &:hover {
-    background-color: $white-color;
-    color: $accent-color;
-
-    &::before {
-      transform: translateY(-50%) rotate(45deg);
-      background-color: $white-color;
-    }
-
-    &::after {
-      background-color: $accent-color;
-    }
-  }
-
-  &:active {
-    background-color: $white-color;
-    color: $accent-color-07;
-
-    &::before {
-      background-color: $white-color;
-      opacity: 0.7;
-    }
-
-    &::after {
-      background-color: $accent-color;
-    }
   }
 }
+
+.header__nav {
+  display: none;
+}
+
+.header__nav-list {}
+
+.header__nav-item {}
+
+.header__nav-link {}

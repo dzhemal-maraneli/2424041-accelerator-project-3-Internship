@@ -13,7 +13,7 @@ const programsSwiper = new Swiper('.programs__slider', {
   },
   scrollbar: {
     el: '.programs__scrollbar',
-    dragClass: 'scrollbar__drag',
+    dragClass: 'main-scrollbar__drag',
     draggable: true,
   },
   breakpoints: {

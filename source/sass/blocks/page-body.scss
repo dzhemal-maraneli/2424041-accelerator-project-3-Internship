@@ -5,16 +5,16 @@
   justify-content: space-between;
   min-height: 100vh;
 
-  // &--overlay::before {
-  //   position: absolute;
-  //   content: "";
-  //   top: 0;
-  //   left: 0;
-  //   height: 100%;
-  //   width: 100%;
-  //   background-color: $main-text-color-06;
-  //   z-index: 2;
-  // }
+  &--overlay::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $dark-overlay;
+    z-index: 2;
+  }
 }
 
 .page-body__main {

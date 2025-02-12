@@ -1,21 +1,10 @@
-.scrollbar {
+.main-scrollbar {
   height: 2px;
   background-color: $accent-color-02;
-  display: none;
   margin: 10px 0;
-
-  @media (min-width: $tablet-width) {
-    display: block;
-    grid-column: 1 / 3;
-    grid-row: 3 / 4;
-  }
-
-  @media (min-width: $desktop-width) {
-
-  }
 }
 
-.scrollbar__drag {
+.main-scrollbar__drag {
   position: relative;
   height: 100%;
   background-color: $accent-color;
@@ -39,5 +28,6 @@
 
   &:active {
     background-color: $active-color;
+    opacity: 1;
   }
 }

@@ -13,7 +13,7 @@ const reviewsSwiper = new Swiper('.reviews__slider', {
   },
   scrollbar: {
     el: '.reviews__scrollbar',
-    dragClass: 'scrollbar__drag',
+    dragClass: 'main-scrollbar__drag',
     draggable: true,
   },
   breakpoints: {
