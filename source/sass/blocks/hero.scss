@@ -32,6 +32,101 @@
   }
 }
 
+.hero__pagination {
+  background-color: $white-color;
+  position: absolute;
+  left: calc(15px + (100% - $mobile-width) / 2);
+  bottom: 323px;
+  z-index: 2;
+  padding: 10px 16px;
+  border-radius: 12px 12px 0 0;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 1;
+
+  transition: opacity 0.3s ease, bottom 0.3s;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-image: url("/__spritemap#sprite-text-decor-icon-view");
+    background-repeat: no-repeat;
+    transform: translateX(100%);
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 34px;
+    height: 34px;
+    background-image: url("/__spritemap#sprite-text-decor-icon-view");
+    background-repeat: no-repeat;
+    transform: rotate(90deg) translateX(100%);
+  }
+
+  &--hide {
+    opacity: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    left: calc(45px + (100% - $tablet-width) / 2);
+    padding: 14px 20px;
+    border-radius: 20px 20px 0 0;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    left: calc(100px + (100% - $desktop-width) / 2);
+  }
+}
+
+.hero__pagination-bullet {
+  @include button-reset;
+
+  width: 8px;
+  height: 8px;
+  border: 2px solid $accent-color;
+  background-color: $white-color;
+  border-radius: 50%;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--active {
+    background-color: $accent-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 12px;
+    height: 12px;
+
+  }
+
+  @media (min-width: $desktop-width) {
+
+  }
+}
+
 .hero__slider-slide-content {
   padding: 94px 15px 20px;
   grid-column: 1 / -1;
@@ -56,7 +151,7 @@
   @media (min-width: $desktop-width) {
     grid-template-columns: 1fr 442px;
     max-width: $desktop-width;
-    padding: 94px 372px 60px 100px;
+    padding: 132px 372px 60px 100px;
     width: 100%;
   }
 }
@@ -197,7 +292,7 @@
   }
 }
 
-.hero-slider-slide-link {
+.hero__slider-slide-link {
   @media (min-width: $tablet-width) {
     padding: 20px 80px 20px 30px;
   }

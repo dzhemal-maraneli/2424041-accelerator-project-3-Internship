@@ -1,4 +1,5 @@
 .programs {
+  overflow: hidden;
 }
 
 .programs__container {
@@ -181,6 +182,7 @@
     width: 18px;
     height: 18px;
     background-image: url("/__spritemap#sprite-text-decor-icon-view");
+    background-repeat: no-repeat;
   }
 
   @media (min-width: $tablet-width) {

@@ -1,7 +1,20 @@
 .main-scrollbar {
+  position: relative;
   height: 2px;
   background-color: $accent-color-02;
   margin: 10px 0;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    content: "";
+    width: 100%;
+    height: calc(100% + 20px);
+    transform: translateY(-50%);
+  }
 }
 
 .main-scrollbar__drag {

@@ -1,4 +1,6 @@
-.news {}
+.news {
+  overflow: hidden;
+}
 
 .news__container {
   display: flex;
@@ -11,9 +13,7 @@
     gap: 30px;
   }
 
-  @media (min-width: $desktop-width) {
-
-  }
+  @media (min-width: $desktop-width) {}
 }
 
 .news__title {}
@@ -28,20 +28,15 @@
     width: 100%;
   }
 
-  @media (min-width: $desktop-width) {
-
-  }
+  @media (min-width: $desktop-width) {}
 }
 
 .news__categories-wrapper {
   @include list-reset;
 
-  @media (min-width: $tablet-width) {
-  }
+  @media (min-width: $tablet-width) {}
 
-  @media (min-width: $desktop-width) {
-
-  }
+  @media (min-width: $desktop-width) {}
 }
 
 .news__categories-wrapper .news__categories-item {
@@ -53,7 +48,7 @@
   @include link-reset;
 
   position: relative;
-  padding: 12px 16px;
+  padding: 12px 14px;
   font-size: 12px;
   line-height: 12px;
   font-weight: 500;
@@ -68,9 +63,7 @@
     line-height: 14px;
   }
 
-  @media (min-width: $desktop-width) {
-
-  }
+  @media (min-width: $desktop-width) {}
 }
 
 .news__categories-button--active {
@@ -78,21 +71,23 @@
 
   &::before {
     position: absolute;
-    inset: 0;
+    top: 50%;
+    left: 0;
     content: "";
+    height: 100%;
+    width: calc(100% + 4px);
     border: 2px solid $accent-color;
     border-radius: 20px;
+    transform: translateY(-50%);
   }
 
   @media (min-width: $tablet-width) {
     &::before {
-      inset: -1px;
+
     }
   }
 
-  @media (min-width: $desktop-width) {
-
-  }
+  @media (min-width: $desktop-width) {}
 }
 
 .news__container .news__slider {
@@ -106,7 +101,8 @@
   }
 
   @media (min-width: $desktop-width) {
-
+    width: 1230px;
+    height: 400px;
   }
 }
 
@@ -150,8 +146,9 @@
 
 .news__slider-slide-date {
   position: relative;
+  display: block;
   background-color: $second-text-color;
-  padding: 12px 12px 6px 0;
+  padding: 13px 12px 5px 0;
   width: max-content;
   // min-width: 146px;
   // max-width: 240px;
@@ -166,7 +163,7 @@
 
   &::before {
     position: absolute;
-    bottom: 5px;
+    bottom: 0;
     right: -16px;
     content: "";
     width: 16px;
@@ -233,7 +230,7 @@
 .news__slider-slide-box {
   position: relative;
   background-color: $second-text-color;
-  padding: 12px 50px 10px 0;
+  padding: 12px 55px 10px 0;
   border-radius: 0 12px;
 
   display: flex;
@@ -258,6 +255,36 @@
     max-width: 240px;
   }
 
+  @media (min-width: $desktop-width) {}
+}
+
+.news__slider-wrapper .news__slider-slide:nth-child(even) {
+  .news__slider-slide-title {
+    padding: 10px 24px 4px 0;
+  }
+
+  .news__slider-slide-box {
+    padding: 13px 55px 11px 0;
+  }
+
+  .news__slider-slide-link {
+    top: 12px;
+  }
+
+  @media (min-width: $tablet-width) {
+    .news__slider-slide-title {
+      padding: 10px 18px 6px 0;
+    }
+
+    .news__slider-slide-box {
+      padding: 12px 64px 15px 0;
+    }
+
+    .news__slider-slide-link {
+      top: calc(50% - 2px);
+    }
+  }
+
   @media (min-width: $desktop-width) {
 
   }
@@ -267,11 +294,13 @@
   margin: 0;
   font-size: 12px;
   line-height: 14px;
+  transform: translateY(1px);
 
   @media (min-width: $tablet-width) {
     font-size: 14px;
     line-height: 20px;
     max-width: 176px;
+    transform: unset;
   }
 
   @media (min-width: $desktop-width) {
@@ -311,11 +340,38 @@
   display: block;
 }
 
-.news__navigation {}
+.news__navigation {
+  width: 100%;
+  max-width: unset;
+  justify-content: space-between;
+}
 
 .news__navigation-button {}
 
 .news__navigation-button--prev {}
 
-
 .news__navigation-button--next {}
+
+.news__pagination {
+  display: flex;
+  gap: 16px;
+}
+
+.news__pagination-bullet {
+  @include button-reset;
+
+  width: 26px;
+  height: 26px;
+
+  font-size: 14px;
+  line-height: 14px;
+  color: $accent-color;
+  opacity: 0.5;
+  border-radius: 50%;
+
+  &--active {
+    opacity: 1;
+    background-color: $accent-color;
+    color: $white-color;
+  }
+}
