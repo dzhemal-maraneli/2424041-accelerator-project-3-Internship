@@ -1,0 +1,267 @@
+.modal {
+  position: relative;
+  background-color: $white-color;
+  display: none;
+
+  width: 290px;
+
+  padding: 40px 15px;
+  text-align: center;
+  border-radius: 16px;
+
+  &--active {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 54px 80px;
+    width: 510px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 54px 80px;
+  }
+}
+
+.modal__close-button {
+  @include button-reset;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+
+    background-color: $accent-color;
+    mask-image: url("/__spritemap#sprite-burger-close-icon-view");
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    @media (min-width: $tablet-width) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    top: 18px;
+    right: 21px;
+  }
+}
+
+.modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 25px;
+
+  @media (min-width: $tablet-width) {
+    gap: 30px;
+  }
+}
+
+.modal__text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  max-width: 220px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    max-width: unset;
+  }
+}
+
+.modal__title {
+  font-size: 18px;
+  line-height: 18px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.modal__text {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 20px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 26px;
+  }
+}
+
+.modal__form {
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @media (min-width: $tablet-width) {
+    gap: 20px;
+  }
+}
+
+.modal__list {
+  @include list-reset;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @media (min-width: $tablet-width) {
+    gap: 20px;
+  }
+}
+
+.modal__item:has(.custom-select) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 20px;
+    gap: 12px;
+  }
+}
+
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-size: 14px;
+  line-height: 14px;
+  color: $main-text-color;
+  opacity: 0.8;
+
+  transition: opacity 0.3s;
+
+  &:focus-within {
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:has(.form__input:disabled),
+  &:has(.form__textarea:disabled) {
+    opacity: 0.6;
+  }
+
+  &:has(.form__input:disabled):hover,
+  &:has(.form__textarea:disabled):hover {
+    opacity: 0.6;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 20px;
+    gap: 12px;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 18px;
+  }
+}
+
+.modal__input {
+  padding: 12px 24px;
+  background-color: $white-color;
+  border: 1px solid $main-text-color-03;
+  border-radius: 8px;
+  height: 44px;
+
+  font-size: 18px;
+  line-height: 18px;
+  color: $main-text-color;
+
+  transition: border-color 0.3s;
+
+  &--error {
+    opacity: 0.7;
+    background-color: $error-color-02;
+    border-color: $error-color;
+  }
+
+  &:hover {
+    border-color: $main-text-color;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    border-color: $main-text-color;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    background-color: $white-color-03;
+  }
+
+  @media (min-width: $tablet-width) {
+    height: 50px;
+  }
+}
+
+.modal__select {
+  width: 100%;
+  height: 44px;
+
+  @media (min-width: $tablet-width) {
+    height: 50px;
+  }
+}
+
+.modal__checkbox-wrapper {
+  @media (min-width: $tablet-width) {
+    margin-bottom: 10px;
+  }
+}
+
+.modal__checkbox-label {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.modal__button {
+  width: 100%;
+  max-width: unset;
+
+  @media (min-width: $tablet-width) {
+    width: min-content;
+    align-self: center;
+  }
+}

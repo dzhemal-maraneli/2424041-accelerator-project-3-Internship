@@ -1,0 +1,142 @@
+.custom-select {
+  position: relative;
+
+  &::before {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    content: "";
+    width: 16px;
+    height: 16px;
+
+    transform: translateY(-50%);
+
+    background-color: $white-color;
+    mask-image: url("/__spritemap#sprite-dropdown-icon-view");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    transition: transform 0.3s;
+  }
+
+  &:has(.custom-select__select-list--active) {
+    &::before {
+      transform: translateY(-50%) rotate(-180deg);
+    }
+  }
+}
+
+.custom-select__select {
+  padding: 15px 40px 16px 20px;
+  background-color: $accent-color;
+  border: 1px solid $white-color-03;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+
+  font-size: 14px;
+  line-height: 14px;
+  color: $second-text-color;
+
+  transition: border-color 0.3s;
+
+  &--error {
+    opacity: 0.7;
+    background-color: $error-color-02;
+    border-color: $error-color;
+  }
+
+  &:hover {
+    border-color: $white-color;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    border-color: $white-color;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    background-color: $white-color-03;
+  }
+
+  @media (min-width: $tablet-width) {
+    max-width: unset;
+    width: 100%;
+  }
+}
+
+.custom-select__select-list {
+  @include list-reset;
+
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  border-radius: 8px;
+  z-index: 3;
+  background-color: $white-color;
+
+  &--active {
+    display: flex;
+  }
+}
+
+.custom-select__select-option {
+  background-color: $white-color;
+  padding: 17px 20px;
+  color: $main-text-color;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+
+  &:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 8px 8px;
+  }
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    color: $white-color;
+    background-color: $accent-color;
+  }
+}
+
+.custom-select--white {
+  &::before {
+    background-color: $main-text-color;
+  }
+}
+
+.custom-select--white .custom-select__select {
+  background-color: $white-color;
+  border: 1px solid $main-text-color-03;
+  color: $main-text-color;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: $main-text-color;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    border-color: $main-text-color;
+  }
+
+  &:disabled {
+    background-color: $input-disabled-color;
+  }
+}

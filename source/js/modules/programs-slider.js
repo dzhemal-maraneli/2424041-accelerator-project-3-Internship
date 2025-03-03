@@ -1,9 +1,9 @@
 import Swiper from 'swiper';
 import 'swiper/css';
-import { Navigation, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Scrollbar } from 'swiper/modules';
 
 new Swiper('.programs__slider', {
-  modules: [Navigation, Scrollbar, A11y],
+  modules: [Navigation, Scrollbar],
   direction: 'horizontal',
   slidesPerView: 1,
   spaceBetween: 15,
@@ -15,11 +15,6 @@ new Swiper('.programs__slider', {
     el: '.programs__scrollbar',
     dragClass: 'main-scrollbar__drag',
     draggable: true,
-  },
-  a11y: {
-    enabled: true,
-    nextSlideMessage: 'Листать далее',
-    prevSlideMessage: 'Листать назад',
   },
   breakpoints: {
     768: {
@@ -35,6 +30,7 @@ new Swiper('.programs__slider', {
       scrollbar: {
         dragSize: 394,
       },
+      allowTouchMove: false,
     },
   }
 });

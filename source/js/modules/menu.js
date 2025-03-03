@@ -33,16 +33,18 @@ function scrollHandler() {
 
 headerNav.addEventListener('click', (evt) => {
   const linkItem = evt.target.closest('.header__nav-link');
-  const dropdownItem = evt.target.closest('.header__nav-item--dropdown');
+  const dropdownList = evt.target.closest('.header__nav-item--dropdown');
+  const dropdownLink = evt.target.closest('.header__nav-dropdown-item');
 
-  if (dropdownItem && dropdownItem.contains(linkItem)) {
+  if (dropdownList && dropdownList.contains(linkItem)) {
     evt.preventDefault();
 
-    dropdownItem.classList.toggle('header__nav-item--dropdown-active');
-    setHeight(dropdownItem);
+    dropdownList.classList.toggle('header__nav-item--dropdown-active');
+    setHeight(dropdownList);
   } else if (linkItem) {
     closeMenu();
-    scrollHandler();
+  } else if (dropdownLink) {
+    closeMenu();
   }
 });
 

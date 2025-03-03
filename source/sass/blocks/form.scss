@@ -12,7 +12,6 @@
 
 .form__container {
   padding: 0;
-  margin: 0;
   width: 100%;
 
   @media (min-width: $tablet-width) {
@@ -27,7 +26,6 @@
 .form__box {
   margin: -43px 0 -40px;
   padding: 43px 10px 40px;
-  overflow: hidden;
 
   background-image:
     image-set(url("../../img/form/form-bg-mobile@1x.webp") 1x type("image/webp"),
@@ -91,8 +89,6 @@
   @media (min-width: $tablet-width) {
     gap: 20px;
   }
-
-  @media (min-width: $desktop-width) {}
 }
 
 .form__title {
@@ -131,7 +127,11 @@
 .form__form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+
+  @media (min-width: $tablet-width) {
+    gap: 19px;
+  }
 }
 
 .form__list {
@@ -142,17 +142,55 @@
   gap: 20px;
 }
 
-.form__item {
+.form__item:has(.custom-select) {
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  @media (min-width: $tablet-width) {
+    gap: 12px;
+  }
+}
+
+.form__item:has(.form__textarea) {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (min-width: $tablet-width) {
+    gap: 12px;
+  }
 }
 
 .form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
   font-size: 12px;
   line-height: 14px;
   color: $second-text-color;
   opacity: 0.8;
+
+  transition: opacity 0.3s;
+
+  &:focus-within {
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:has(.form__input:disabled),
+  &:has(.form__textarea:disabled) {
+    opacity: 0.6;
+  }
+
+  &:has(.form__input:disabled):hover,
+  &:has(.form__textarea:disabled):hover {
+    opacity: 0.6;
+  }
 
   @media (min-width: $tablet-width) {
     font-size: 14px;
@@ -177,6 +215,30 @@
   font-size: 18px;
   line-height: 18px;
   color: $white-color;
+
+  transition: border-color 0.3s;
+
+  &--error {
+    opacity: 0.7;
+    background-color: $error-color-02;
+    border-color: $error-color;
+  }
+
+  &:hover {
+    border-color: $white-color;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    border-color: $white-color;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    background-color: $white-color-03;
+  }
 }
 
 .form__textarea {
@@ -191,6 +253,30 @@
   color: $white-color;
   resize: none;
 
+  transition: border-color 0.3s;
+
+  &--error {
+    opacity: 0.7;
+    background-color: $error-color-02;
+    border-color: $error-color;
+  }
+
+  &:hover {
+    border-color: $white-color;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    border-color: $white-color;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    background-color: $white-color-03;
+  }
+
   @media (min-width: $tablet-width) {
     min-height: 88px;
   }
@@ -200,44 +286,18 @@
   }
 }
 
-.form__select {
-  padding: 15px 40px 14px 20px;
-  background-color: $accent-color;
-  border: 1px solid $white-color-03;
-  border-radius: 8px;
+.form__select-wrapper {
   max-width: 260px;
-
-  font-size: 14px;
-  line-height: 14px;
 
   @media (min-width: $tablet-width) {
     max-width: unset;
   }
-
-  @media (min-width: $desktop-width) {}
 }
 
-.form__checkbox-wrapper {}
-
-.form__checkbox {}
-
 .form__checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
   font-size: 12px;
   line-height: 14px;
   color: $white-color;
-
-  &::before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-radius: 2px;
-    background-color: $white-color;
-    flex-shrink: 0;
-  }
 
   @media (min-width: $tablet-width) {
     margin-bottom: 20px;
@@ -246,8 +306,6 @@
       display: none;
     }
   }
-
-  @media (min-width: $desktop-width) {}
 }
 
 .form__button {
@@ -258,8 +316,4 @@
     max-width: 352px;
     padding-right: 80px;
   }
-
-  @media (min-width: $desktop-width) {}
 }
-
-.button {}

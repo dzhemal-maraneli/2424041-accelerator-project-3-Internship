@@ -1,13 +1,13 @@
 import Swiper from 'swiper';
 import 'swiper/css';
-import { Pagination, A11y } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 
 const heroSlider = document.querySelector('.hero__slider');
 const swiperPagination = document.querySelector('.hero__pagination');
 let resizeTimeout;
 
 new Swiper('.hero__slider', {
-  modules: [Pagination, A11y],
+  modules: [Pagination,],
   direction: 'horizontal',
   slidesPerView: 1,
   loop: true,
@@ -18,6 +18,11 @@ new Swiper('.hero__slider', {
     bulletClass: 'hero__pagination-bullet',
     bulletActiveClass: 'hero__pagination-bullet--active',
     clickable: true,
+    renderBullet: function (index, className) {
+      return `<button class="${className} custom-bullet" data-index="${index}">
+      <span class="visually-hidden">Перейти к слайду ${index}</span>
+              </button>`;
+    },
   },
   on: {
     slideChangeTransitionStart: paginationAnimationStart,
@@ -36,10 +41,10 @@ new Swiper('.hero__slider', {
       }
     },
   },
-  a11y: {
-    enabled: true,
-    paginationBulletMessage: 'Перейти к слайду {{index}}',
-  },
+  // a11y: {
+  //   enabled: true,
+  //   paginationBulletMessage: 'Перейти к слайду {{index}}',
+  // },
   breakpoints: {
     1440: {
       allowTouchMove: false,

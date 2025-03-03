@@ -1,0 +1,167 @@
+.custom-checkbox + label {
+  position: relative;
+  display: block;
+  padding: 4px 0 4px 30px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: $accent-color;
+    border: 1px solid $white-color-07;
+    transform: translateY(-50%);
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 5px;
+
+    background-color: transparent;
+    mask-image: url("/__spritemap#sprite-check-icon-view");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    transform: translateY(-50%);
+    transition: background-color 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      border-color: $white-color;
+    }
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.custom-checkbox:focus + label {
+  &::before {
+    border-color: $white-color;
+  }
+}
+
+.custom-checkbox--error + label {
+  &::before {
+    opacity: 0.7;
+    background-color: $error-color-02;
+    border-color: $error-color;
+  }
+}
+
+.custom-checkbox:checked + label {
+  &::before {
+    background-color: $white-color;
+  }
+
+  &::after {
+    background-color: $accent-color;
+  }
+}
+
+.custom-checkbox:checked:hover + label {
+  &::before {
+    border-color: $white-color;
+    background-color: $accent-color;
+  }
+
+  &::after {
+    background-color: $white-color;
+  }
+}
+
+.custom-checkbox:disabled + label {
+  cursor: default;
+  color: $white-color-03;
+
+  &::before {
+    border-color: $white-color;
+    background-color: $white-color-07;
+  }
+}
+
+.custom-checkbox:checked:disabled + label {
+  &::before {
+    border-color: $disabled-color;
+    background-color: $disabled-color;
+  }
+
+  &::after {
+    background-color: $white-color-07;
+  }
+}
+
+.custom-checkbox:checked:focus + label {
+  &::before {
+    border-color: $white-color;
+    background-color: $accent-color;
+  }
+
+  &::after {
+    background-color: $white-color;
+  }
+}
+
+.custom-checkbox--white + label {
+  &::before {
+    background-color: $white-color;
+    border: 1px solid $white-color;
+  }
+
+  &:hover {
+    &::before {
+      border-color: $white-color;
+      background-color: $accent-color;
+    }
+  }
+}
+
+.custom-checkbox--white:focus + label {
+  &::before {
+    border-color: $white-color;
+    background-color: $accent-color;
+  }
+}
+
+.custom-checkbox--white:checked + label {
+  &::before {
+    background-color: $white-color;
+  }
+
+  &::after {
+    background-color: $accent-color;
+  }
+}
+
+.custom-checkbox--white:checked:hover + label {
+  &::before {
+    border-color: $white-color;
+    background-color: $accent-color;
+  }
+
+  &::after {
+    background-color: $white-color;
+  }
+}
+
+.custom-checkbox--white:checked:focus + label {
+  &::before {
+    background-color: $accent-color;
+  }
+
+  &::after {
+    background-color: $white-color;
+  }
+}

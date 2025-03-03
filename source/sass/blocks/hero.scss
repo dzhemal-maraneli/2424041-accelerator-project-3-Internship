@@ -16,7 +16,6 @@
 
 .hero__slider-wrapper {
   @include list-reset;
-
 }
 
 .hero__slider-wrapper .hero__slider-item {
@@ -102,33 +101,47 @@
   border-radius: 50%;
   position: relative;
 
+  transition: background-color 0.3s, border-color 0.3s;
+
   &::before {
     content: "";
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    pointer-events: none;
   }
 
   &--active {
     background-color: $accent-color;
   }
 
+  &:hover {
+    background-color: $accent-color-07;
+    border-color: $white-color;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: $accent-color;
+    border-color: $accent-color;
+  }
+
+  &:active {
+    background-color: $active-color;
+    border-color: $active-color;
+  }
+
   @media (min-width: $tablet-width) {
     width: 12px;
     height: 12px;
-
-  }
-
-  @media (min-width: $desktop-width) {
-
   }
 }
 
 .hero__slider-slide-content {
-  padding: 94px 15px 20px;
+  padding: 110px 15px 20px;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   width: $mobile-width;
@@ -142,7 +155,7 @@
   @media (min-width: $tablet-width) {
     position: relative;
     width: $tablet-width;
-    padding: 94px 64px 60px 45px;
+    padding: 110px 64px 60px 45px;
 
     grid-template-columns: 1fr 304px;
     grid-template-rows: auto auto;
@@ -240,10 +253,6 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-
-  @media (min-width: $tablet-width) {
-
-  }
 
   @media (min-width: $desktop-width) {
     line-height: 26px;

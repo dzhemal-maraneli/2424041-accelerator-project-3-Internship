@@ -4,10 +4,6 @@
   align-items: center;
   max-width: 52px;
 
-  @media (min-width: $tablet-width) {
-
-  }
-
   @media (min-width: $desktop-width) {
     max-width: 54px;
     gap: 10px;

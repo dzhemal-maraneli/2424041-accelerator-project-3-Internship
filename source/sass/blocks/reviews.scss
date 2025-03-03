@@ -86,10 +86,6 @@
     grid-template-rows: 1fr;
     gap: 15px;
   }
-
-  @media (min-width: $desktop-width) {
-
-  }
 }
 
 .reviews__slider-slide-image-wrapper {
@@ -106,10 +102,6 @@
     width: 90px;
     height: 90px;
   }
-
-  @media (min-width: $desktop-width) {
-
-  }
 }
 
 .reviews__slider-slide-image {
@@ -122,11 +114,15 @@
   line-height: 18px;
   font-weight: 400;
   color: $accent-color;
-  align-self: center;
+  padding-top: 12px;
+
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: $tablet-width) {
     font-size: 20px;
     line-height: 24px;
+    padding-top: 21px;
   }
 
   @media (min-width: $desktop-width) {
@@ -150,10 +146,6 @@
     justify-self: flex-end;
     align-self: center;
   }
-
-  @media (min-width: $desktop-width) {
-
-  }
 }
 
 .reviews__slider-slide-info-item {
@@ -163,9 +155,6 @@
 
   @media (min-width: $tablet-width) {
     gap: 11px;
-  }
-
-  @media (min-width: $desktop-width) {
   }
 }
 
@@ -177,14 +166,6 @@
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: $accent-color;
-
-  @media (min-width: $tablet-width) {
-
-  }
-
-  @media (min-width: $desktop-width) {
-
-  }
 }
 
 .reviews__slider-slide-info-text {
@@ -257,10 +238,6 @@
     grid-column: 1 / 2;
     grid-row: 3 / 4;
   }
-
-  @media (min-width: $desktop-width) {
-
-  }
 }
 
 .reviews__navigation {
@@ -270,9 +247,5 @@
   @media (min-width: $tablet-width) {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
-  }
-
-  @media (min-width: $desktop-width) {
-
   }
 }

@@ -62,21 +62,10 @@
 }
 
 .grant__img-wrapper {
-  width: 290px;
-  height: 200px;
+  width: max-content;
   border-radius: 16px;
   overflow: hidden;
   background-color: $second-text-color;
-
-  @media (min-width: $tablet-width) {
-    width: 678px;
-    height: 375px;
-  }
-
-  @media (min-width: $desktop-width) {
-    width: 498px;
-    height: 363px;
-  }
 }
 
 .grant__img {

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Internship — развитие молодых специалистов через практический опыт || Главная</title>
+  <title>Internship — развитие молодых специалистов || Главная</title>
   <meta name="description"
     content="Программа «Стажировка» — совместный проект правительств и волонтёрских бригад, направленный на развитие молодых специалистов. Помогаем получить ценные навыки, решать сложные задачи и вносить значимые изменения. Присоединяйтесь!">
   <link rel="preload" href="./fonts/manrope/Manrope-Light.woff2" type="font/woff2" as="font" crossorigin="anonymous">
@@ -20,62 +20,63 @@
 </head>
 
 <body class="page-body">
+  <h1 class="visually-hidden">Internship — развитие молодых специалистов</h1>
   <header class="header">
     <div class="header__container container">
       <img class="header__logo logo" src="./img/logo.svg" width="52" height="52" alt="Логотип Internship">
 
       <div class="header__menu-wrapper">
-        <button class="header__burger-button">Меню</button>
-        <nav class="header__nav">
+        <button class="header__burger-button" type="button">Меню</button>
+        <nav class="header__nav" aria-label="Меню">
           <ul class="header__nav-list">
             <li class="header__nav-item">
-              <a class="header__nav-link" href="#">О проекте</a>
+              <a class="header__nav-link" href="#about">О проекте</a>
             </li>
             <li class="header__nav-item header__nav-item--dropdown">
               <a class="header__nav-link" href="#">Программы</a>
               <ul class="header__nav-dropdown">
                 <li class="header__nav-dropdown-item">
-                  <a class="header__nav-dropdown-link" href="">Стажировки</a>
+                  <a class="header__nav-dropdown-link" href="#programs">Стажировки</a>
                 </li>
                 <li class="header__nav-dropdown-item">
-                  <a class="header__nav-dropdown-link" href="">Волонтёрство</a>
+                  <a class="header__nav-dropdown-link" href="#programs">Волонтёрство</a>
                 </li>
                 <li class="header__nav-dropdown-item">
-                  <a class="header__nav-dropdown-link" href="">Учёба</a>
+                  <a class="header__nav-dropdown-link" href="#programs">Учёба</a>
                 </li>
                 <li class="header__nav-dropdown-item">
-                  <a class="header__nav-dropdown-link" href="">Религия</a>
+                  <a class="header__nav-dropdown-link" href="#programs">Религия</a>
                 </li>
               </ul>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="#">Как поехать</a>
+              <a class="header__nav-link" href="#grant">Как поехать</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="#">Отзывы</a>
+              <a class="header__nav-link" href="#reviews">Отзывы</a>
             </li>
             <li class="header__nav-item header__nav-item--dropdown">
               <a class="header__nav-link" href="#">Новости</a>
               <ul class="header__nav-dropdown">
                 <li class="header__nav-dropdown-item">
-                  <a class="header__nav-dropdown-link" href="">Общее</a>
+                  <a class="header__nav-dropdown-link" href="#news">Общее</a>
                 </li>
                 <li class="header__nav-dropdown-item">
-                  <a class="header__nav-dropdown-link" href="">Волонтёрство</a>
+                  <a class="header__nav-dropdown-link" href="#news">Волонтёрство</a>
                 </li>
                 <li class="header__nav-dropdown-item">
-                  <a class="header__nav-dropdown-link" href="">Стажировки</a>
+                  <a class="header__nav-dropdown-link" href="#news">Стажировки</a>
                 </li>
                 <li class="header__nav-dropdown-item">
-                  <a class="header__nav-dropdown-link" href="">Карьера</a>
+                  <a class="header__nav-dropdown-link" href="#news">Карьера</a>
                 </li>
                 <li class="header__nav-dropdown-item">
-                  <a class="header__nav-dropdown-link" href="">Путешествия</a>
+                  <a class="header__nav-dropdown-link" href="#news">Путешествия</a>
                 </li>
               </ul>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link" href="#">Контакты</a>
+              <a class="header__nav-link" href="#contacts">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -87,6 +88,7 @@
   <main class="page-body__main">
 
     <section class="hero" data-test="hero" id="hero">
+      <h2 class="visually-hidden">Главный слайдер</h2>
       <div class="hero__slider swiper">
         <div class="hero__pagination swiper-pagination"></div>
         <ul class="hero__slider-wrapper swiper-wrapper">
@@ -239,7 +241,7 @@
                 изменения.
               </p>
             </div>
-            <button class="about__button button">Подробнее о проекте</button>
+            <button class="about__button button" type="button">Подробнее о проекте</button>
           </div>
         </div>
 
@@ -526,10 +528,14 @@
         <div class="programs__navigation slider-navigation">
           <button
             class="programs__navigation-button programs__navigation-button--prev slider-navigation__button slider-navigation__button--prev"
-            type="button"></button>
+            type="button">
+            <span class="visually-hidden">Листать назад</span>
+          </button>
           <button
             class="programs__navigation-button programs__navigation-button--next slider-navigation__button slider-navigation__button--next"
-            type="button"></button>
+            type="button">
+            <span class="visually-hidden">Листать далее</span>
+          </button>
         </div>
       </div>
 
@@ -655,8 +661,8 @@
               <div class="news__slider-slide-image-wrapper">
                 <picture>
                   <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-1-desktop@1x.webp 1x, ./img/news/news-1-desktop@2x.webp 2x" width="286"
-                    height="400" type="image/webp">
+                    srcset="./img/news/news-1-big-desktop@1x.webp 1x, ./img/news/news-1-big-desktop@2x.webp 2x"
+                    width="604" height="400" type="image/webp">
                   <source media="(min-width: 768px)"
                     srcset="./img/news/news-1-tablet@1x.webp 1x, ./img/news/news-1-tablet@2x.webp 2x" width="324"
                     height="350" type="image/webp">
@@ -664,8 +670,8 @@
                     srcset="./img/news/news-1-mobile@1x.webp 1x, ./img/news/news-1-mobile@2x.webp 2x" width="290"
                     height="330" type="image/webp">
                   <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-1-desktop@1x.jpg 1x, ./img/news/news-1-desktop@2x.jpg 2x" width="286"
-                    height="400" type="image/png">
+                    srcset="./img/news/news-1-big-desktop@1x.jpg 1x, ./img/news/news-1-big-desktop@2x.jpg 2x"
+                    width="604" height="400" type="image/png">
                   <source media="(min-width: 768px)"
                     srcset="./img/news/news-1-tablet@1x.jpg 1x, ./img/news/news-1-tablet@2x.jpg 2x" width="324"
                     height="350" type="image/png">
@@ -772,8 +778,8 @@
               <div class="news__slider-slide-image-wrapper">
                 <picture>
                   <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-4-desktop@1x.webp 1x, ./img/news/news-4-desktop@2x.webp 2x" width="286"
-                    height="400" type="image/webp">
+                    srcset="./img/news/news-4-big-desktop@1x.webp 1x, ./img/news/news-4-big-desktop@2x.webp 2x"
+                    width="604" height="400" type="image/webp">
                   <source media="(min-width: 768px)"
                     srcset="./img/news/news-4-tablet@1x.webp 1x, ./img/news/news-4-tablet@2x.webp 2x" width="324"
                     height="350" type="image/webp">
@@ -781,164 +787,8 @@
                     srcset="./img/news/news-4-mobile@1x.webp 1x, ./img/news/news-4-mobile@2x.webp 2x" width="290"
                     height="240" type="image/webp">
                   <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-4-desktop@1x.jpg 1x, ./img/news/news-4-desktop@2x.jpg 2x" width="286"
-                    height="400" type="image/png">
-                  <source media="(min-width: 768px)"
-                    srcset="./img/news/news-4-tablet@1x.jpg 1x, ./img/news/news-4-tablet@2x.jpg 2x" width="324"
-                    height="350" type="image/png">
-                  <img class="news__slider-slide-image" src="./img/news/news-4-mobile@1x.jpg"
-                    srcset="./img/news/news-4-mobile@2x.jpg 2x" width="290" height="240" alt="">
-                </picture>
-              </div>
-            </li>
-
-            <li class="news__slider-slide swiper-slide">
-              <div class="news__slider-slide-content">
-                <span class="news__slider-slide-date">23/03/2023</span>
-                <h3 class="news__slider-slide-title">Интервью с&nbsp;участницей
-                  программы стажировки</h3>
-                <div class="news__slider-slide-box">
-                  <p>
-                    Саша рассказывает, как&nbsp;попала
-                    в&nbsp;программу и&nbsp;как прошла 6-месячная стажировка в ISOFound
-                  </p>
-                  <a class="news__slider-slide-link arrow-link" href="#">
-                    <span class="visually-hidden">Узнать подробнее.</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="news__slider-slide-image-wrapper">
-                <picture>
-                  <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-1-desktop@1x.webp 1x, ./img/news/news-1-desktop@2x.webp 2x" width="286"
-                    height="400" type="image/webp">
-                  <source media="(min-width: 768px)"
-                    srcset="./img/news/news-1-tablet@1x.webp 1x, ./img/news/news-1-tablet@2x.webp 2x" width="324"
-                    height="350" type="image/webp">
-                  <source media="(min-width: 320px)"
-                    srcset="./img/news/news-1-mobile@1x.webp 1x, ./img/news/news-1-mobile@2x.webp 2x" width="290"
-                    height="330" type="image/webp">
-                  <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-1-desktop@1x.jpg 1x, ./img/news/news-1-desktop@2x.jpg 2x" width="286"
-                    height="400" type="image/png">
-                  <source media="(min-width: 768px)"
-                    srcset="./img/news/news-1-tablet@1x.jpg 1x, ./img/news/news-1-tablet@2x.jpg 2x" width="324"
-                    height="350" type="image/png">
-                  <img class="news__slider-slide-image" src="./img/news/news-1-mobile@1x.jpg"
-                    srcset="./img/news/news-1-mobile@2x.jpg 2x" width="290" height="330" alt="">
-                </picture>
-              </div>
-            </li>
-
-            <li class="news__slider-slide swiper-slide">
-              <div class="news__slider-slide-content">
-                <span class="news__slider-slide-date">20/03/2023</span>
-                <h3 class="news__slider-slide-title">Путешествуем по&nbsp;миру</h3>
-                <div class="news__slider-slide-box">
-                  <p>
-                    Какие места посещают наши
-                    студенты весной
-                  </p>
-                  <a class="news__slider-slide-link arrow-link" href="#">
-                    <span class="visually-hidden">Узнать подробнее.</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="news__slider-slide-image-wrapper">
-                <picture>
-                  <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-2-desktop@1x.webp 1x, ./img/news/news-2-desktop@2x.webp 2x" width="286"
-                    height="400" type="image/webp">
-                  <source media="(min-width: 768px)"
-                    srcset="./img/news/news-2-tablet@1x.webp 1x, ./img/news/news-2-tablet@2x.webp 2x" width="324"
-                    height="350" type="image/webp">
-                  <source media="(min-width: 320px)"
-                    srcset="./img/news/news-2-mobile@1x.webp 1x, ./img/news/news-2-mobile@2x.webp 2x" width="290"
-                    height="240" type="image/webp">
-                  <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-2-desktop@1x.jpg 1x, ./img/news/news-2-desktop@2x.jpg 2x" width="286"
-                    height="400" type="image/png">
-                  <source media="(min-width: 768px)"
-                    srcset="./img/news/news-2-tablet@1x.jpg 1x, ./img/news/news-2-tablet@2x.jpg 2x" width="324"
-                    height="350" type="image/png">
-                  <img class="news__slider-slide-image" src="./img/news/news-2-mobile@1x.jpg"
-                    srcset="./img/news/news-2-mobile@2x.jpg 2x" width="290" height="240" alt="">
-                </picture>
-              </div>
-            </li>
-
-            <li class="news__slider-slide swiper-slide">
-              <div class="news__slider-slide-content">
-                <span class="news__slider-slide-date">17/03/2023</span>
-                <h3 class="news__slider-slide-title">Новая программа
-                  волонтёрства</h3>
-                <div class="news__slider-slide-box">
-                  <p>
-                    Программа помощи детям
-                    длительностью 4 месяца
-                  </p>
-                  <a class="news__slider-slide-link arrow-link" href="#">
-                    <span class="visually-hidden">Узнать подробнее.</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="news__slider-slide-image-wrapper">
-                <picture>
-                  <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-3-desktop@1x.webp 1x, ./img/news/news-3-desktop@2x.webp 2x" width="286"
-                    height="400" type="image/webp">
-                  <source media="(min-width: 768px)"
-                    srcset="./img/news/news-3-tablet@1x.webp 1x, ./img/news/news-3-tablet@2x.webp 2x" width="324"
-                    height="350" type="image/webp">
-                  <source media="(min-width: 320px)"
-                    srcset="./img/news/news-3-mobile@1x.webp 1x, ./img/news/news-3-mobile@2x.webp 2x" width="290"
-                    height="330" type="image/webp">
-                  <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-3-desktop@1x.jpg 1x, ./img/news/news-3-desktop@2x.jpg 2x" width="286"
-                    height="400" type="image/png">
-                  <source media="(min-width: 768px)"
-                    srcset="./img/news/news-3-tablet@1x.jpg 1x, ./img/news/news-3-tablet@2x.jpg 2x" width="324"
-                    height="350" type="image/png">
-                  <img class="news__slider-slide-image" src="./img/news/news-3-mobile@1x.jpg"
-                    srcset="./img/news/news-3-mobile@2x.jpg 2x" width="290" height="330" alt="">
-                </picture>
-              </div>
-            </li>
-
-            <li class="news__slider-slide swiper-slide">
-              <div class="news__slider-slide-content">
-                <span class="news__slider-slide-date">10/03/2023</span>
-                <h3 class="news__slider-slide-title">Построй свою
-                  карьеру</h3>
-                <div class="news__slider-slide-box">
-                  <p>
-                    Ведущие компании
-                    готовы трудоустроить
-                    выпускников стажировки
-                  </p>
-                  <a class="news__slider-slide-link arrow-link" href="#">
-                    <span class="visually-hidden">Узнать подробнее.</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="news__slider-slide-image-wrapper">
-                <picture>
-                  <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-4-desktop@1x.webp 1x, ./img/news/news-4-desktop@2x.webp 2x" width="286"
-                    height="400" type="image/webp">
-                  <source media="(min-width: 768px)"
-                    srcset="./img/news/news-4-tablet@1x.webp 1x, ./img/news/news-4-tablet@2x.webp 2x" width="324"
-                    height="350" type="image/webp">
-                  <source media="(min-width: 320px)"
-                    srcset="./img/news/news-4-mobile@1x.webp 1x, ./img/news/news-4-mobile@2x.webp 2x" width="290"
-                    height="240" type="image/webp">
-                  <source media="(min-width: 1440px)"
-                    srcset="./img/news/news-4-desktop@1x.jpg 1x, ./img/news/news-4-desktop@2x.jpg 2x" width="286"
-                    height="400" type="image/png">
+                    srcset="./img/news/news-4-big-desktop@1x.jpg 1x, ./img/news/news-4-big-desktop@2x.jpg 2x"
+                    width="604" height="400" type="image/png">
                   <source media="(min-width: 768px)"
                     srcset="./img/news/news-4-tablet@1x.jpg 1x, ./img/news/news-4-tablet@2x.jpg 2x" width="324"
                     height="350" type="image/png">
@@ -953,11 +803,15 @@
         <div class="news__navigation slider-navigation">
           <button
             class="news__navigation-button news__navigation-button--prev slider-navigation__button slider-navigation__button--prev"
-            type="button"></button>
-            <div class="news__pagination swiper-pagination"></div>
+            type="button">
+            <span class="visually-hidden">Листать назад</span>
+          </button>
+          <div class="news__pagination swiper-pagination"></div>
           <button
             class="news__navigation-button news__navigation-button--next slider-navigation__button slider-navigation__button--next"
-            type="button"></button>
+            type="button">
+            <span class="visually-hidden">Листать далее</span>
+          </button>
         </div>
       </div>
     </section>
@@ -1081,9 +935,8 @@
                   </picture>
                 </div>
                 <h3 class="reviews__slider-slide-name">
-                  Лола
-                  <br>
-                  Алекс
+                  <span class="reviews__slider-slide-first-name">Лола</span>
+                  <span class="reviews__slider-slide-last-name">Алекс</span>
                 </h3>
                 <ul class="reviews__slider-slide-info">
                   <li class="reviews__slider-slide-info-item">
@@ -1137,9 +990,8 @@
                   </picture>
                 </div>
                 <h3 class="reviews__slider-slide-name">
-                  Давид
-                  <br>
-                  Иванов
+                  <span class="reviews__slider-slide-first-name">Давид</span>
+                  <span class="reviews__slider-slide-last-name">Иванов</span>
                 </h3>
                 <ul class="reviews__slider-slide-info">
                   <li class="reviews__slider-slide-info-item">
@@ -1188,9 +1040,8 @@
                   </picture>
                 </div>
                 <h3 class="reviews__slider-slide-name">
-                  Лола
-                  <br>
-                  Алекс
+                  <span class="reviews__slider-slide-first-name">Лола</span>
+                  <span class="reviews__slider-slide-last-name">Алекс</span>
                 </h3>
                 <ul class="reviews__slider-slide-info">
                   <li class="reviews__slider-slide-info-item">
@@ -1244,9 +1095,8 @@
                   </picture>
                 </div>
                 <h3 class="reviews__slider-slide-name">
-                  Давид
-                  <br>
-                  Иванов
+                  <span class="reviews__slider-slide-first-name">Давид</span>
+                  <span class="reviews__slider-slide-last-name">Иванов</span>
                 </h3>
                 <ul class="reviews__slider-slide-info">
                   <li class="reviews__slider-slide-info-item">
@@ -1284,10 +1134,14 @@
         <div class="reviews__navigation slider-navigation">
           <button
             class="reviews__navigation-button reviews__navigation-button--prev slider-navigation__button slider-navigation__button--prev"
-            type="button"></button>
+            type="button">
+            <span class="visually-hidden">Листать назад</span>
+          </button>
           <button
             class="reviews__navigation-button reviews__navigation-button--next slider-navigation__button slider-navigation__button--next"
-            type="button"></button>
+            type="button">
+            <span class="visually-hidden">Листать далее</span>
+          </button>
         </div>
       </div>
     </section>
@@ -1350,37 +1204,57 @@
           <div class="form__wrapper">
             <div class="form__text-content">
               <h2 class="form__title section-title section-title--white">Напишите нам</h2>
-              <p class="form__text">Оставьте ваши контакты, если у вас остались
-                вопросы — мы на них ответим!</p>
+              <p class="form__text">
+                Оставьте ваши контакты, если у вас остались
+                вопросы — мы на них ответим!
+              </p>
             </div>
-            <form class="form__form" action="">
+            <form class="form__form" action="https://echo.htmlacademy.ru" method="post">
               <ul class="form__list">
                 <li class="form__item">
-                  <label class="form__label" for="">Имя</label>
-                  <input class="form__input" type="text">
+                  <label class="form__label">
+                    Имя
+                    <input class="form__input" type="text" name="user-name" required>
+                  </label>
                 </li>
                 <li class="form__item">
-                  <label class="form__label" for="">Телефон</label>
-                  <input class="form__input" type="text">
+                  <label class="form__label">
+                    Телефон
+                    <input class="form__input" type="text" name="user-phone" required>
+                  </label>
                 </li>
                 <li class="form__item">
-                  <label class="form__label" for="">Ваше сообщение</label>
-                  <textarea class="form__textarea" name="" id=""></textarea>
+                  <label class="form__label" for="user-message">
+                    Ваше сообщение
+                  </label>
+                  <textarea class="form__textarea" name="user-message" id="user-message" required></textarea>
                 </li>
                 <li class="form__item">
-                  <label class="form__label form__label--select" for="">Выберите город</label>
-                  <select class="form__select" name="" id="">
-
-                  </select>
+                  <label class="form__label form__label--select" for="user-city">
+                    Выберите город
+                  </label>
+                  <div class="form__select-wrapper custom-select">
+                    <input class="form__select custom-select__select" type="text" id="user-city"
+                      name="user-city" readonly required>
+                    <ul class="form__select-list custom-select__select-list">
+                      <li class="form__select-option custom-select__select-option" tabindex="0">Санкт-Петербург</li>
+                      <li class="form__select-option custom-select__select-option" tabindex="0">Москва</li>
+                      <li class="form__select-option custom-select__select-option" tabindex="0">Красноярск</li>
+                      <li class="form__select-option custom-select__select-option" tabindex="0">Казань</li>
+                    </ul>
+                  </div>
                 </li>
               </ul>
               <div class="form__checkbox-wrapper">
-                <input class="form__checkbox visually-hidden" type="checkbox">
-                <label class="form__checkbox-label" for="">Я согласен на обработку моих
+                <input class="form__checkbox custom-checkbox custom-checkbox--white visually-hidden" id="personal-data"
+                  type="checkbox" name="personal-data" required>
+                <label class="form__checkbox-label" for="personal-data">
+                  Я согласен на обработку моих
                   <br>
                   персональных
                   <br>
-                  данных</label>
+                  данных
+                </label>
               </div>
 
               <button class="form__button button button--white" type="submit">Отправить</button>
@@ -1396,7 +1270,7 @@
     <div class="footer__container container">
       <div class="footer__top">
         <img class="footer__logo logo" src="./img/logo.svg" width="52" height="52" alt="Логотип Internship">
-        <nav class="footer__nav">
+        <nav class="footer__nav" aria-label="Навигация по сайту">
           <ul class="footer__nav-list">
             <li class="footer__nav-item">
               <a class="footer__nav-link" href="#about">О проекте</a>
@@ -1452,6 +1326,61 @@
       </ul>
     </div>
   </footer>
+
+  <div class="modal">
+    <div class="modal__wrapper">
+      <button class="modal__close-button" type="button">
+        <span class="visually-hidden">Закрыть окно</span>
+      </button>
+      <div class="modal__text-content">
+        <h2 class="modal__title section-title">Напишите нам</h2>
+        <p class="modal__text">
+          Оставьте ваши контакты, если&nbsp;у&nbsp;вас остались
+          вопросы&nbsp;— мы на них ответим!
+        </p>
+      </div>
+      <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+        <ul class="modal__list">
+          <li class="modal__item">
+            <label class="modal__label">
+              Имя
+              <input class="modal__input" type="text" name="modal-user-name" required>
+            </label>
+          </li>
+          <li class="modal__item">
+            <label class="modal__label">
+              Телефон
+              <input class="modal__input" type="text" name="modal-user-phone" required>
+            </label>
+          </li>
+          <li class="modal__item">
+            <label class="modal__label" for="modal-user-city">
+              Выберите город
+            </label>
+            <div class="modal__select-wrapper custom-select custom-select--white">
+              <input class="modal__select custom-select__select" type="text" id="modal-user-city"
+                name="modal-user-city" readonly required>
+              <ul class="modal__select-list custom-select__select-list">
+                <li class="modal__select-option custom-select__select-option" tabindex="0">Санкт-Петербург</li>
+                <li class="modal__select-option custom-select__select-option" tabindex="0">Москва</li>
+                <li class="modal__select-option custom-select__select-option" tabindex="0">Красноярск</li>
+                <li class="modal__select-option custom-select__select-option" tabindex="0">Казань</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="modal__checkbox-wrapper">
+          <input class="modal__checkbox custom-checkbox visually-hidden" id="personal-data-modal"
+            name="personal-data-modal" type="checkbox" required>
+          <label class="modal__checkbox-label" for="personal-data-modal">
+            Я согласен на обработку моих персональных данных
+          </label>
+        </div>
+
+        <button class="modal__button button" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
 
   <script type="module" src="js/main.js"></script>
 </body>
